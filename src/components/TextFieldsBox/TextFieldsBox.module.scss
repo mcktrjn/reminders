@@ -1,0 +1,11 @@
+@import "../../variables.scss";
+
+.textFieldsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0;
+  width: 100%;
+  transition: max-height 0.75s;
+  overflow: hidden;
+}

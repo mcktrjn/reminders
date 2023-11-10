@@ -1,0 +1,29 @@
+@import "../../variables.scss";
+
+.displayTaskCard {
+  .checkbox,
+  .iconButton {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .displayTaskCard {
+    flex-wrap: wrap;
+
+    .textFieldsBox {
+      order: -1;
+      padding-bottom: 0;
+    }
+
+    .checkbox,
+    .iconButton {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .iconButton:nth-of-type(1) {
+      margin-left: auto;
+    }
+  }
+}

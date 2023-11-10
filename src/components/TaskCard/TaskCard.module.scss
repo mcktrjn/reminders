@@ -1,0 +1,10 @@
+@import "../../variables.scss";
+
+.taskCard {
+  display: flex;
+  gap: 8px;
+  border: 1px solid $grey-500;
+  border-radius: 8px;
+  padding: 0 8px;
+  background-color: $white;
+}
