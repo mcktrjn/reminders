@@ -1,0 +1,103 @@
+@import "../../variables.scss";
+
+$blurred-border-width: 1px;
+$focused-border-width: 2px;
+$padding: 8px;
+$height: 20px;
+$translate-y: calc(0px - $focused-border-width / 2 - $padding - $height / 2);
+
+.textField {
+  position: relative;
+  display: flex;
+  cursor: text;
+
+  .input {
+    all: unset;
+    box-sizing: border-box;
+    border: $blurred-border-width solid $grey-200;
+    border-radius: 4px;
+    padding: calc($blurred-border-width + $padding);
+    width: 100%;
+    max-height: 200px;
+    background-color: $grey-50;
+    line-height: $height;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &::placeholder {
+      color: $grey-500;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    &:hover {
+      border-color: $grey-500;
+    }
+
+    &:disabled {
+      border-color: $grey-200;
+      cursor: default;
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      &::placeholder {
+        opacity: 1;
+      }
+
+      & + .label {
+        background-color: $grey-200;
+        transform: translate(1px, $translate-y) scale(0.75);
+      }
+    }
+
+    &:focus {
+      border-width: $focused-border-width;
+      border-color: $primary-500;
+      padding: $padding;
+      background-color: $primary-50;
+      color: $primary-900;
+
+      & + .label {
+        background-color: $primary-500;
+        font-weight: 500;
+        color: $white;
+      }
+    }
+
+    &.checked {
+      &:not(:focus) {
+        border-color: $success-500;
+        background-color: $success-50;
+        color: $success-900;
+
+        & + .label {
+          color: $success-900;
+        }
+
+        &:not(:placeholder-shown) {
+          & + .label {
+            background-color: $success-500;
+            font-weight: 500;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  .label {
+    position: absolute;
+    top: calc($focused-border-width + $padding);
+    left: calc($focused-border-width + 4px);
+    border-radius: 4px;
+    padding: 0 4px;
+    line-height: $height;
+    transform-origin: left;
+    transition: transform 0.25s;
+  }
+}

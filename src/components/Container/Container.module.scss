@@ -1,0 +1,14 @@
+@import "../../variables.scss";
+
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 120px;
+  max-width: 1200px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 16px;
+  }
+}

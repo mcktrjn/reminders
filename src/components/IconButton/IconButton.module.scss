@@ -1,0 +1,27 @@
+@import "../../variables.scss";
+
+.iconButton {
+  all: unset;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: calc(40px / 2);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+
+  .icon {
+    font-family: "Material Icons";
+    font-size: 24px;
+  }
+
+  &:hover {
+    border: 1px solid;
+  }
+
+  &:focus-visible {
+    border: 2px solid;
+  }
+}
